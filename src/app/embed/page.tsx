@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import Chat from "@/components/Chat";
+import { SparkleIcon } from "@/components/icons";
 import { SAMPLE_QUESTIONS } from "@/data/sampleHandbook";
 
 export const metadata = { title: "DocuChat Widget" };
@@ -14,7 +15,7 @@ type SearchParams = PageProps<"/embed">["searchParams"];
 export default function EmbedPage({ searchParams }: PageProps<"/embed">) {
   return (
     <div className="flex h-dvh flex-col bg-white dark:bg-zinc-900">
-      <Suspense fallback={<div className="h-14 bg-orange-500" />}>
+      <Suspense fallback={<div className="h-14 bg-gradient-to-r from-orange-500 to-rose-500" />}>
         <Widget searchParams={searchParams} />
       </Suspense>
     </div>
@@ -27,8 +28,10 @@ async function Widget({ searchParams }: { searchParams: SearchParams }) {
 
   return (
     <>
-      <header className="flex items-center gap-2 bg-orange-500 px-4 py-3 text-white">
-        <span className="text-lg">✦</span>
+      <header className="flex items-center gap-2.5 bg-gradient-to-r from-orange-500 to-rose-500 px-4 py-3 text-white">
+        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/20 ring-1 ring-white/30">
+          <SparkleIcon width={14} height={14} />
+        </span>
         <div>
           <p className="text-sm font-semibold leading-tight">
             {typeof title === "string" ? title.slice(0, 60) : "Ask our assistant"}
