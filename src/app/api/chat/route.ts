@@ -81,6 +81,11 @@ export async function POST(req: Request) {
       stream: result.stream,
       originalMessages: messages,
       messageMetadata: ({ part }) => (part.type === "start" ? { sources } : undefined),
+      onError: (error) => {
+        // Full details go to the server logs (Vercel → Logs); visitors get a friendly message
+        console.error("[chat] generation failed:", error);
+        return "The AI model couldn't answer right now. Please try again in a moment.";
+      },
     }),
   });
 }

@@ -8,7 +8,7 @@ const num = (value: string | undefined, fallback: number) => {
 };
 
 export const config = {
-  chatModel: process.env.GEMINI_CHAT_MODEL || "gemini-flash-latest",
+  chatModel: process.env.GEMINI_CHAT_MODEL || "gemini-3.5-flash",
   embeddingModel: process.env.GEMINI_EMBEDDING_MODEL || "gemini-embedding-001",
   // Must match the vector(...) size in the database schema
   embeddingDimensions: 768,
