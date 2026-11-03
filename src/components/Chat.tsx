@@ -231,7 +231,7 @@ export default function Chat({ kb, suggestions = [], compact = false }: Props) {
                 )}
 
                 {activeSource && (
-                  <div className="animate-fade-up mt-3 overflow-hidden rounded-xl border border-orange-200 bg-orange-50/60 text-xs dark:border-orange-400/25 dark:bg-gradient-to-b dark:from-orange-500/[0.08] dark:to-transparent">
+                  <div className="animate-fade-up mt-3 overflow-hidden rounded-xl border border-orange-200 bg-orange-50/60 text-xs dark:border-orange-400/25 dark:bg-orange-500/[0.06]">
                     <div className="flex items-center justify-between gap-2 border-b border-orange-200/70 px-3 py-2 font-semibold dark:border-orange-400/15">
                       <span className="truncate">
                         <span className="text-orange-600 dark:text-orange-300">[{activeSource.n}]</span>{" "}
